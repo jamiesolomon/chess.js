@@ -39,6 +39,7 @@ export type Color = 'w' | 'b'
 export type PieceSymbol = 'p' | 'n' | 'b' | 'r' | 'q' | 'k'
 
 // prettier-ignore
+// TODO: update for 2 more rows
 export type Square =
     'a8' | 'b8' | 'c8' | 'd8' | 'e8' | 'f8' | 'g8' | 'h8' |
     'a7' | 'b7' | 'c7' | 'd7' | 'e7' | 'f7' | 'g7' | 'h7' |
@@ -49,6 +50,7 @@ export type Square =
     'a2' | 'b2' | 'c2' | 'd2' | 'e2' | 'f2' | 'g2' | 'h2' |
     'a1' | 'b1' | 'c1' | 'd1' | 'e1' | 'f1' | 'g1' | 'h1'
 
+// Add two more 8s to indicate two more rows of 8 squares
 export const DEFAULT_POSITION =
   'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
@@ -104,6 +106,7 @@ const FLAGS: Record<string, string> = {
 }
 
 // prettier-ignore
+// TODO: update for two more rows
 export const SQUARES: Square[] = [
   'a8', 'b8', 'c8', 'd8', 'e8', 'f8', 'g8', 'h8',
   'a7', 'b7', 'c7', 'd7', 'e7', 'f7', 'g7', 'h7',
@@ -166,6 +169,7 @@ const BITS: Record<string, number> = {
 
 // prettier-ignore
 // eslint-disable-next-line
+// TODO: update for two more rows
 const Ox88: Record<Square, number> = {
   a8:   0, b8:   1, c8:   2, d8:   3, e8:   4, f8:   5, g8:   6, h8:   7,
   a7:  16, b7:  17, c7:  18, d7:  19, e7:  20, f7:  21, g7:  22, h7:  23,
