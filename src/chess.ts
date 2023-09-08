@@ -39,8 +39,10 @@ export type Color = 'w' | 'b'
 export type PieceSymbol = 'p' | 'n' | 'b' | 'r' | 'q' | 'k'
 
 // prettier-ignore
-// TODO: update for 2 more rows
+// DONE: update for 2 more rows
 export type Square =
+    'a10' | 'b10' | 'c10' | 'd10' | 'e10' | 'f10' | 'g10' | 'h10' |
+    'a9' | 'b9' | 'c9' | 'd9' | 'e9' | 'f9' | 'g9' | 'h9' |
     'a8' | 'b8' | 'c8' | 'd8' | 'e8' | 'f8' | 'g8' | 'h8' |
     'a7' | 'b7' | 'c7' | 'd7' | 'e7' | 'f7' | 'g7' | 'h7' |
     'a6' | 'b6' | 'c6' | 'd6' | 'e6' | 'f6' | 'g6' | 'h6' |
@@ -50,9 +52,9 @@ export type Square =
     'a2' | 'b2' | 'c2' | 'd2' | 'e2' | 'f2' | 'g2' | 'h2' |
     'a1' | 'b1' | 'c1' | 'd1' | 'e1' | 'f1' | 'g1' | 'h1'
 
-// Add two more 8s to indicate two more rows of 8 squares
+// DONE: Added two more 8s to indicate two more rows of 8 squares
 export const DEFAULT_POSITION =
-  'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
+  'rnbqkbnr/pppppppp/8/8/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
 export type Piece = {
   color: Color
@@ -106,8 +108,10 @@ const FLAGS: Record<string, string> = {
 }
 
 // prettier-ignore
-// TODO: update for two more rows
+// DONE: update for two more rows
 export const SQUARES: Square[] = [
+  'a10', 'b10', 'c10', 'd10', 'e10', 'f10', 'g10', 'h10',
+  'a9', 'b9', 'c9', 'd9', 'e9', 'f9', 'g9', 'h9',
   'a8', 'b8', 'c8', 'd8', 'e8', 'f8', 'g8', 'h8',
   'a7', 'b7', 'c7', 'd7', 'e7', 'f7', 'g7', 'h7',
   'a6', 'b6', 'c6', 'd6', 'e6', 'f6', 'g6', 'h6',
@@ -169,17 +173,20 @@ const BITS: Record<string, number> = {
 
 // prettier-ignore
 // eslint-disable-next-line
-// TODO: update for two more rows
+// DONE: update for two more rows
 const Ox88: Record<Square, number> = {
-  a8:   0, b8:   1, c8:   2, d8:   3, e8:   4, f8:   5, g8:   6, h8:   7,
-  a7:  16, b7:  17, c7:  18, d7:  19, e7:  20, f7:  21, g7:  22, h7:  23,
-  a6:  32, b6:  33, c6:  34, d6:  35, e6:  36, f6:  37, g6:  38, h6:  39,
-  a5:  48, b5:  49, c5:  50, d5:  51, e5:  52, f5:  53, g5:  54, h5:  55,
-  a4:  64, b4:  65, c4:  66, d4:  67, e4:  68, f4:  69, g4:  70, h4:  71,
-  a3:  80, b3:  81, c3:  82, d3:  83, e3:  84, f3:  85, g3:  86, h3:  87,
-  a2:  96, b2:  97, c2:  98, d2:  99, e2: 100, f2: 101, g2: 102, h2: 103,
-  a1: 112, b1: 113, c1: 114, d1: 115, e1: 116, f1: 117, g1: 118, h1: 119
+  a10:   0, b10:   1, c10:   2, d10:   3, e10:   4, f10:   5, g10:   6, h10:   7,
+  a9:  16, b9:  17, c9:  18, d9:  19, e9:  20, f9:  21, g9:  22, h9:  23,
+  a8:  32, b8:  33, c8:  34, d8:  35, e8:  36, f8:  37, g8:  38, h8:  39,
+  a7:  48, b7:  49, c7:  50, d7:  51, e7:  52, f7:  53, g7:  54, h7:  55,
+  a6:  64, b6:  65, c6:  66, d6:  67, e6:  68, f6:  69, g6:  70, h6:  71,
+  a5:  80, b5:  81, c5:  82, d5:  83, e5:  84, f5:  85, g5:  86, h5:  87,
+  a4:  96, b4:  97, c4:  98, d4:  99, e4: 100, f4: 101, g4: 102, h4: 103,
+  a3: 112, b3: 113, c3: 114, d3: 115, e3: 116, f3: 117, g3: 118, h3: 119,
+  a2: 128, b2: 129, c2: 130, d2: 131, e2: 132, f2: 133, g2: 134, h2: 135,
+  a1: 144, b1: 145, c1: 146, d1: 147, e1: 148, f1: 149, g1: 150, h1: 151
 }
+
 
 const PAWN_OFFSETS = {
   b: [16, 32, 17, 15],
