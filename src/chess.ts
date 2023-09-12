@@ -1165,7 +1165,7 @@ export class Chess {
       // did we run off the end of the board
       if (from & 0x88) {
         console.log('WE RAN OFF THE BOAAARRDDD!!! possible change to +=9')
-        from += 7
+        from += 9
         continue
       }
 
