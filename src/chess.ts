@@ -267,8 +267,8 @@ const ROOKS = {
     { square: Ox88.h1, flag: BITS.KSIDE_CASTLE },
   ],
   b: [
-    { square: Ox88.a8, flag: BITS.QSIDE_CASTLE },
-    { square: Ox88.h8, flag: BITS.KSIDE_CASTLE },
+    { square: Ox88.a10, flag: BITS.QSIDE_CASTLE },
+    { square: Ox88.h10, flag: BITS.KSIDE_CASTLE },
   ],
 }
 
@@ -664,7 +664,7 @@ export class Chess {
     let empty = 0
     let fen = ''
 
-    for (let i = Ox88.a8; i <= Ox88.h1; i++) {
+    for (let i = Ox88.a10; i <= Ox88.h1; i++) {
       if (this._board[i]) {
         if (empty > 0) {
           fen += empty
@@ -860,11 +860,11 @@ export class Chess {
       this._castling.w &= ~BITS.KSIDE_CASTLE
     }
 
-    if (!blackKingInPlace || this._board[Ox88.a8]?.type !== ROOK || this._board[Ox88.a8]?.color !== BLACK) {
+    if (!blackKingInPlace || this._board[Ox88.a10]?.type !== ROOK || this._board[Ox88.a10]?.color !== BLACK) {
       this._castling.b &= ~BITS.QSIDE_CASTLE
     }
 
-    if (!blackKingInPlace || this._board[Ox88.h8]?.type !== ROOK || this._board[Ox88.h8]?.color !== BLACK) {
+    if (!blackKingInPlace || this._board[Ox88.h10]?.type !== ROOK || this._board[Ox88.h10]?.color !== BLACK) {
       this._castling.b &= ~BITS.KSIDE_CASTLE
     }
   }
@@ -899,7 +899,7 @@ export class Chess {
   }
 
   _attacked(color: Color, square: number) {
-    for (let i = Ox88.a8; i <= Ox88.h1; i++) {
+    for (let i = Ox88.a10; i <= Ox88.h1; i++) {
       // did we run off the end of the board
       if (i & 0x88) {
         i += 7
@@ -998,7 +998,7 @@ export class Chess {
     let numPieces = 0
     let squareColor = 0
 
-    for (let i = Ox88.a8; i <= Ox88.h1; i++) {
+    for (let i = Ox88.a10; i <= Ox88.h1; i++) {
       squareColor = (squareColor + 1) % 2
       if (i & 0x88) {
         i += 7
@@ -1146,7 +1146,7 @@ export class Chess {
     const us = this._turn
     const them = swapColor(us)
 
-    let firstSquare = Ox88.a8
+    let firstSquare = Ox88.a10
     let lastSquare = Ox88.h1
     let singleSquare = false
 
@@ -2120,7 +2120,7 @@ export class Chess {
 
   ascii() {
     let s = '   +------------------------+\n'
-    for (let i = Ox88.a8; i <= Ox88.h1; i++) {
+    for (let i = Ox88.a10; i <= Ox88.h1; i++) {
       // display the rank
       if (file(i) === 0) {
         s += ' ' + '87654321'[rank(i)] + ' |'
@@ -2218,7 +2218,7 @@ export class Chess {
     const output = []
     let row = []
 
-    for (let i = Ox88.a8; i <= Ox88.h1; i++) {
+    for (let i = Ox88.a10; i <= Ox88.h1; i++) {
       if (this._board[i] == null) {
         row.push(null)
       } else {
