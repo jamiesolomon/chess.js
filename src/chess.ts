@@ -1139,6 +1139,7 @@ export class Chess {
     piece?: PieceSymbol
     square?: Square
   } = {}) {
+    console.log('------------------------Begining of _moves()----------------------')
     const forSquare = square ? (square.toLowerCase() as Square) : undefined
     const forPiece = piece?.toLowerCase()
 
@@ -1164,8 +1165,8 @@ export class Chess {
     for (let from = firstSquare; from <= lastSquare; from++) {
       // did we run off the end of the board
       if (from & 0x88) {
-        console.log('WE RAN OFF THE BOAAARRDDD!!! possible change to +=9')
-        from += 9
+        console.log('WE RAN OFF THE BOAAARRDDD!!!')
+        from += 7
         continue
       }
 
@@ -1178,9 +1179,11 @@ export class Chess {
       let to: number
       if (type === PAWN) {
         if (forPiece && forPiece !== type) continue
-
+        
         // single square, non-capturing
         to = from + PAWN_OFFSETS[us][0]
+        console.log('from: ' + from)
+        console.log('to: ' + to)
         if (!this._board[to]) {
           addMove(moves, us, from, to, PAWN)
 
@@ -1362,6 +1365,8 @@ export class Chess {
         console.log('Moves[' + i + '].to: ' + moves[i].to)
         console.log('move.to: ' + move.to)
         console.log('algebraic(moves[i].to): ' + algebraic(moves[i].to))
+        console.log('JSON.stringify(moves[i]):' + JSON.stringify(moves[i]))
+        console.log('JSON.stringify(move):' + JSON.stringify(move))
 
 
         if (
@@ -1381,7 +1386,7 @@ export class Chess {
       if (typeof move === 'string') {
         throw new Error(`Invalid move: ${move}`)
       } else {
-        throw new Error(`Invalid move STRINGIFY!: ${JSON.stringify(move)}`)
+        throw new Error(`Invalid move: ${JSON.stringify(move)}`)
       }
     }
 
