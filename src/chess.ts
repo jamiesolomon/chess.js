@@ -1164,6 +1164,7 @@ export class Chess {
     for (let from = firstSquare; from <= lastSquare; from++) {
       // did we run off the end of the board
       if (from & 0x88) {
+        console.log('WE RAN OFF THE BOAAARRDDD!!! possible change to +=9')
         from += 7
         continue
       }
@@ -1330,7 +1331,7 @@ export class Chess {
     move: string | { from: string; to: string; promotion?: string },
     { strict = false }: { strict?: boolean } = {}
   ) {
-    console.log("Move: " + move)
+    console.log("-------------Benning of move function--------------")
     /*
      * The move function can be called with in the following parameters:
      *
@@ -1354,12 +1355,22 @@ export class Chess {
 
       // convert the pretty move object to an ugly move object
       for (let i = 0, len = moves.length; i < len; i++) {
+        console.log('Moves[' + i + ']: ' + moves[i])
+        console.log('Moves[' + i + '].from: ' + moves[i].from)
+        console.log('move.from: ' + move.from)
+        console.log('algebraic(moves[i].from): ' + algebraic(moves[i].from))
+        console.log('Moves[' + i + '].to: ' + moves[i].to)
+        console.log('move.to: ' + move.to)
+        console.log('algebraic(moves[i].to): ' + algebraic(moves[i].to))
+
+
         if (
           move.from === algebraic(moves[i].from) &&
           move.to === algebraic(moves[i].to) &&
           (!('promotion' in moves[i]) || move.promotion === moves[i].promotion)
         ) {
           moveObj = moves[i]
+          console.log('Assigning move Object')
           break
         }
       }
@@ -1370,7 +1381,7 @@ export class Chess {
       if (typeof move === 'string') {
         throw new Error(`Invalid move: ${move}`)
       } else {
-        throw new Error(`Invalid move: ${JSON.stringify(move)}`)
+        throw new Error(`Invalid move STRINGIFY!: ${JSON.stringify(move)}`)
       }
     }
 
