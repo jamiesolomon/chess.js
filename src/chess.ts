@@ -1330,6 +1330,7 @@ export class Chess {
     move: string | { from: string; to: string; promotion?: string },
     { strict = false }: { strict?: boolean } = {}
   ) {
+    console.log("Move: " + move)
     /*
      * The move function can be called with in the following parameters:
      *
