@@ -346,9 +346,10 @@ export function validateFen(fen: string) {
     return { ok: false, error: 'Invalid FEN: side-to-move is invalid' }
   }
 
-  // 7th criterion: 1st field contains 8 rows?
+  // DONE: changed validation to rows == 10 instead of 8
+  // 7th criterion: 1st field contains 10 rows?
   const rows = tokens[0].split('/')
-  if (rows.length !== 8) {
+  if (rows.length !== 10) {
     return {
       ok: false,
       error: "Invalid FEN: piece data does not contain 8 '/'-delimited rows",
