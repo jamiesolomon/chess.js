@@ -1355,6 +1355,9 @@ export class Chess {
       moveObj = this._moveFromSan(move, strict)
     } else if (typeof move === 'object') {
       const moves = this._moves()
+      console.log('moves length: ' + moves.length)
+      console.log('moves: ' + moves)
+      console.log('Stringify moves: ' + (JSON.stringify(moves)))
 
       // convert the pretty move object to an ugly move object
       for (let i = 0, len = moves.length; i < len; i++) {
