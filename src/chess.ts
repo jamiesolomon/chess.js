@@ -1151,12 +1151,13 @@ export class Chess {
     let lastSquare = Ox88.h1
     let singleSquare = false
 
-    // are we generating moves for a single square?
     if (forSquare) {
       // illegal square, return empty moves
       if (!(forSquare in Ox88)) {
+        console.log(forSquare + "NOT IN 0x88!!!")
         return []
       } else {
+        console.log('Found square in 0x88')
         firstSquare = lastSquare = Ox88[forSquare]
         singleSquare = true
       }
@@ -1166,7 +1167,9 @@ export class Chess {
       // did we run off the end of the board
       if (from & 0x88) {
         console.log('WE RAN OFF THE BOAAARRDDD!!!')
+        console.log('from: ' + from)
         from += 7
+        console.log('new from after adding 7: ' + from)
         continue
       }
 
@@ -1354,6 +1357,7 @@ export class Chess {
     if (typeof move === 'string') {
       moveObj = this._moveFromSan(move, strict)
     } else if (typeof move === 'object') {
+      console.log("this: " + this)
       const moves = this._moves()
       console.log('moves length: ' + moves.length)
       console.log('moves: ' + moves)
