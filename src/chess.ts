@@ -1420,15 +1420,18 @@ export class Chess {
         console.log('JSON.stringify(move):' + JSON.stringify(move))
 
 
-        if (
-          move.from === algebraic(moves[i].from) &&
-          move.to === algebraic(moves[i].to) &&
-          (!('promotion' in moves[i]) || move.promotion === moves[i].promotion)
-        ) {
-          moveObj = moves[i]
-          console.log('Assigning move Object')
-          break
-        }
+        // if (
+        //   move.from === algebraic(moves[i].from) &&
+        //   move.to === algebraic(moves[i].to) &&
+        //   (!('promotion' in moves[i]) || move.promotion === moves[i].promotion)
+        // ) {
+        //   moveObj = moves[i]
+        //   console.log('Assigning move Object')
+        //   break
+        // }
+
+        console.log('Assigning moveObj to moves[' + i + ']: ' + JSON.stringify(moves[i]))
+        moveObj = moves[i]
       }
     }
 
