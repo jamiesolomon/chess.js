@@ -1383,6 +1383,12 @@ export class Chess {
   ) {
     console.log("-------------Benning of move function--------------")
     console.log('move: ' + move)
+
+    if (typeof move === 'object') {
+      console.log('move.from: ' + move.from)
+      console.log('move.to: ' + move.to)
+      console.log('isPromotion: ' + move.promotion)
+  }
     /*
      * The move function can be called with in the following parameters:
      *
