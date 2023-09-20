@@ -1382,6 +1382,7 @@ export class Chess {
     { strict = false }: { strict?: boolean } = {}
   ) {
     console.log("-------------Benning of move function--------------")
+    console.log('move: ' + move)
     /*
      * The move function can be called with in the following parameters:
      *
