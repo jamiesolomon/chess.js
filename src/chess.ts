@@ -1430,31 +1430,33 @@ export class Chess {
       console.log('Stringify moves: ' + (JSON.stringify(moves)))
 
       // convert the pretty move object to an ugly move object
-      for (let i = 0, len = moves.length; i < len; i++) {
-        console.log('Moves[' + i + ']: ' + moves[i])
-        console.log('Moves[' + i + '].from: ' + moves[i].from)
-        console.log('move.from: ' + move.from)
-        console.log('algebraic(moves[i].from): ' + algebraic(moves[i].from))
-        console.log('Moves[' + i + '].to: ' + moves[i].to)
-        console.log('move.to: ' + move.to)
-        console.log('algebraic(moves[i].to): ' + algebraic(moves[i].to))
-        console.log('JSON.stringify(moves[i]):' + JSON.stringify(moves[i]))
-        console.log('JSON.stringify(move):' + JSON.stringify(move))
+      // for (let i = 0, len = moves.length; i < len; i++) {
+      //   console.log('Moves[' + i + ']: ' + moves[i])
+      //   console.log('Moves[' + i + '].from: ' + moves[i].from)
+      //   console.log('move.from: ' + move.from)
+      //   console.log('algebraic(moves[i].from): ' + algebraic(moves[i].from))
+      //   console.log('Moves[' + i + '].to: ' + moves[i].to)
+      //   console.log('move.to: ' + move.to)
+      //   console.log('algebraic(moves[i].to): ' + algebraic(moves[i].to))
+      //   console.log('JSON.stringify(moves[i]):' + JSON.stringify(moves[i]))
+      //   console.log('JSON.stringify(move):' + JSON.stringify(move))
 
 
-        // if (
-        //   move.from === algebraic(moves[i].from) &&
-        //   move.to === algebraic(moves[i].to) &&
-        //   (!('promotion' in moves[i]) || move.promotion === moves[i].promotion)
-        // ) {
-        //   moveObj = moves[i]
-        //   console.log('Assigning move Object')
-        //   break
-        // }
+      //   // if (
+      //   //   move.from === algebraic(moves[i].from) &&
+      //   //   move.to === algebraic(moves[i].to) &&
+      //   //   (!('promotion' in moves[i]) || move.promotion === moves[i].promotion)
+      //   // ) {
+      //   //   moveObj = moves[i]
+      //   //   console.log('Assigning move Object')
+      //   //   break
+      //   // }
 
-        console.log('Assigning moveObj to moves[' + i + ']: ' + JSON.stringify(moves[i]))
-        moveObj = moves[i]
-      }
+      //   console.log('Assigning moveObj to moves[' + i + ']: ' + JSON.stringify(moves[i]))
+      //   moveObj = moves[i]
+      // }
+
+      moveObj = {"color":"w","from":23,"to":39,"piece":"p","flags":1}
     }
 
     // failed to find move
