@@ -312,8 +312,8 @@ const RANK_2 = 8
  * const RANK_5 = 3
  * const RANK_6 = 2
  */
-const RANK_7 = 1
-const RANK_8 = 0
+const RANK_9 = 1
+const RANK_10 = 0
 
 const SIDES = {
   [KING]: BITS.KSIDE_CASTLE,
@@ -330,8 +330,8 @@ const ROOKS = {
     { square: Ox88.h10, flag: BITS.KSIDE_CASTLE },
   ],
 }
-
-const SECOND_RANK = { b: RANK_7, w: RANK_2 }
+//DONE: Changed rank 7 to 9
+const SECOND_RANK = { b: RANK_9, w: RANK_2 }
 
 const TERMINATION_MARKERS = ['1-0', '0-1', '1/2-1/2', '*']
 
@@ -552,7 +552,7 @@ function addMove(
 ) {
   const r = rank(to)
 
-  if (piece === PAWN && (r === RANK_1 || r === RANK_8)) {
+  if (piece === PAWN && (r === RANK_1 || r === RANK_10)) {
     for (let i = 0; i < PROMOTIONS.length; i++) {
       const promotion = PROMOTIONS[i]
       moves.push({
