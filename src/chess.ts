@@ -188,18 +188,33 @@ const Ox88: Record<Square, number> = {
 }
 
 
+// const PAWN_OFFSETS = {
+//   b: [16, 32, 17, 15],
+//   w: [-16, -32, -17, -15],
+// }
+
+// const PIECE_OFFSETS = {
+//   n: [-18, -33, -31, -14, 18, 33, 31, 14],
+//   b: [-17, -15, 17, 15],
+//   r: [-16, 1, 16, -1],
+//   q: [-17, -16, -15, 1, 17, 16, 15, -1],
+//   k: [-17, -16, -15, 1, 17, 16, 15, -1],
+// }
+
+// chatGPTs offsets
 const PAWN_OFFSETS = {
-  b: [16, 32, 17, 15],
-  w: [-16, -32, -17, -15],
+  b: [16, 32, 17, 15, 18, 14],  // Adjusted for the 8x10 board
+  w: [-16, -32, -17, -15, -18, -14],  // Adjusted for the 8x10 board
 }
 
 const PIECE_OFFSETS = {
-  n: [-18, -33, -31, -14, 18, 33, 31, 14],
-  b: [-17, -15, 17, 15],
-  r: [-16, 1, 16, -1],
-  q: [-17, -16, -15, 1, 17, 16, 15, -1],
-  k: [-17, -16, -15, 1, 17, 16, 15, -1],
+  n: [-19, -34, -32, -17, 19, 34, 32, 17],  // Adjusted for the 8x10 board
+  b: [-18, -17, -16, -15, 18, 17, 16, 15],  // Adjusted for the 8x10 board
+  r: [-18, -17, -16, -15, 18, 17, 16, 15],  // Adjusted for the 8x10 board
+  q: [-18, -17, -16, -15, 18, 17, 16, 15],  // Adjusted for the 8x10 board
+  k: [-18, -17, -16, -15, 18, 17, 16, 15],  // Adjusted for the 8x10 board
 }
+
 
 // prettier-ignore
 // const ATTACKS = [
@@ -288,9 +303,9 @@ const PIECE_MASKS = { p: 0x1, n: 0x2, b: 0x4, r: 0x8, q: 0x10, k: 0x20 }
 const SYMBOLS = 'pnbrqkPNBRQK'
 
 const PROMOTIONS: PieceSymbol[] = [KNIGHT, BISHOP, ROOK, QUEEN]
-
-const RANK_1 = 7
-const RANK_2 = 6
+// DONE: Changed rank1 and 2 to 9 and 8
+const RANK_1 = 9
+const RANK_2 = 8
 /*
  * const RANK_3 = 5
  * const RANK_4 = 4
@@ -1381,7 +1396,7 @@ export class Chess {
     move: string | { from: string; to: string; promotion?: string },
     { strict = false }: { strict?: boolean } = {}
   ) {
-    console.log("-------------Benning of move function--------------")
+    console.log("-------------Beginning of move function--------------")
     console.log('move: ' + move)
 
     if (typeof move === 'object') {
